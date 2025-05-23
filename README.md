@@ -121,6 +121,3 @@ New version deployed to Kubernetes at http://localhost:30000
 ✔️ Docker image builds & deploys  
 ✔️ Notification system integrated  
 ✔️ Deployed successfully via Docker/Kubernetes
-
----
-
