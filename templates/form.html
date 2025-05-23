@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head><title>Employee data</title></head>
+<head>
+    <title>Employee Onboarding Form</title>
+</head>
 <body>
-  <h2>Please Enter Employee Details</h2>
-  <form method="POST">
-    Name: <input type="text" name="name"><br><br>
-    Email: <input type="email" name="email"><br><br>
-    Department: <input type="text" name="department"><br><br>
-    <input type="submit">
-  </form>
+    <h1>Employee Onboarding</h1>
+
+    <form method="POST">
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <label>Department:</label><br>
+        <input type="text" name="department" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if employee %}
+        <hr>
+        <h2>Submitted Employee Info</h2>
+        <p><strong>Name:</strong> {{ employee.name }}</p>
+        <p><strong>Email:</strong> {{ employee.email }}</p>
+        <p><strong>Department:</strong> {{ employee.department }}</p>
+    {% endif %}
 </body>
 </html>
-
