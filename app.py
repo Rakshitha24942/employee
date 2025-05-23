@@ -8,9 +8,14 @@ def index():
         name = request.form['name']
         email = request.form['email']
         department = request.form['department']
-        return f"Employee Info: {name}, {email}, {department}"
+
+        # Basic validation
+        if not name or not email or not department:
+            return "All fields are required!", 400
+
+        return render_template('result.html', name=name, email=email, department=department)
+    
     return render_template('form.html')
 
 if __name__ == "__main__":
-    app.run(debug=True)
-
+    app.run(host='0.0.0.0', port=5000, debug=True)
